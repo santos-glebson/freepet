@@ -21,3 +21,5 @@ Com ele é possível tirar foto do animal, adicionar uma descrição e o endere�
 ## Como utilizar:
 * Setar o endereço do MongoDB de dados caso não seja o localhost
 * Instalar as dependências (npm install)
+* Iniciar a aplicação com o comando "node app"
+* Abrir página inicial no navegador "http://localhost:8000"
