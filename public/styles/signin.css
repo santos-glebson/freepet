@@ -1,0 +1,93 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.bg-image {
+  background-image: url("/images/bg-login.svg");
+  flex: 1;
+  height: 50vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 5rem;
+  display: none;
+}
+
+main {
+  margin: auto 6.9rem;
+  text-align: center;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main a {
+  width: 155px;
+  padding: 0 auto 1rem;
+  margin: 0 auto;
+}
+
+main h2 {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: var(--color2);
+  margin: 2.4rem auto;
+}
+
+main label,
+main input {
+  text-align: left;
+}
+
+main input {
+  width: 100%;
+  margin-bottom: 2.6rem;
+}
+
+main button {
+  background-color: var(--color2);
+  color: var(--color3);
+  margin-bottom: 2.6rem;
+}
+
+main form {
+  width: 100%;
+}
+
+main form a {
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+main button,
+main form a {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .bg-image {
+    display: block;
+  }
+
+  main {
+    width: auto;
+    flex: 1;
+    background-color: var(--color8);
+    margin-right: 0;
+  }
+
+  main form {
+    padding: 0 5rem;
+  }
+}

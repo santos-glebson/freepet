@@ -1,0 +1,318 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--color3);
+  border-bottom: 1px solid var(--color4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 4;
+}
+
+header .user {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .user-image {
+  width: 4rem;
+  height: 4rem;
+  clip-path: circle();
+  background-image: url("/images/user.svg");
+  background-size: cover;
+  margin-right: 1rem;
+}
+
+header a {
+  color: var(--color2);
+}
+
+/* Filter Menu */
+
+.filter-button {
+  position: fixed;
+  top: 8rem;
+  width: 100%;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+  background-color: var(--color3);
+  padding: 1rem;
+  border-bottom: 1px solid var(--color4);
+}
+
+.filter-menu {
+  background-color: var(--color3);
+  padding: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+  position: fixed;
+  top: -70rem;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s;
+  color: var(--color2);
+  z-index: 2;
+}
+
+.filter-menu i:first-child {
+  color: var(--color5);
+}
+
+.filter-menu fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-menu h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.filter-menu label {
+  margin-bottom: 0.5rem;
+}
+
+.filter-menu input {
+  margin-bottom: 2rem;
+}
+
+.filter-menu .button {
+  border: 2px solid var(--color2);
+  outline: 0;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  background-color: var(--color3);
+}
+
+.filter-menu input[type="date"] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color3);
+}
+
+.filter-menu .fas {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Complaints */
+
+.complaints {
+  position: absolute;
+  top: 13rem;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 40rem);
+  gap: 1rem;
+  padding: 0 2rem 18rem 2rem;
+}
+
+.complaint {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "photo address date" "status status status" "trash trash trash";
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color3);
+  padding: 2rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.complaint .thumb-photo {
+  width: 4rem;
+  height: 4rem;
+  background-color: red;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.complaint p:first-of-type {
+  width: 33.33%;
+  white-space: normal;
+  overflow: scroll;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 0.2rem;
+}
+
+.complaint .status {
+  background-color: var(--color6);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--color3);
+  grid-area: status;
+}
+
+.complaint .status-answered {
+  background-color: var(--color7);
+}
+
+.complaint .deleteButton {
+  color: var(--color5);
+  grid-area: trash;
+}
+
+/* Controllers */
+
+.controllers {
+  position: fixed;
+  bottom: 12rem;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  left: 0;
+  z-index: 1;
+  background-color: var(--color3);
+  padding-top: 1.5rem;
+}
+
+.controllers div {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--color1);
+  margin: 0 0.3rem;
+  color: var(--color1);
+  cursor: pointer;
+}
+
+.selectedPage {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color3);
+  border-top: 1px solid var(--color4);
+}
+
+footer a {
+  background-color: var(--color1);
+  color: var(--color3);
+  margin: 4rem 2rem;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+footer i {
+  margin-left: 0.5rem;
+}
+
+/* Modal */
+.modal {
+  position: absolute;
+  z-index: 3;
+  background-color: var(--color3);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  padding: 5rem;
+  text-align: center;
+  display: none;
+}
+
+.modal > div {
+  transform: translateY(-5rem);
+}
+.modal i {
+  font-size: 10rem;
+  color: var(--color5);
+}
+
+.modal h2 {
+  margin: 5rem auto 2rem;
+}
+
+.modal button {
+  background-color: var(--color5);
+  padding: 2rem;
+  font-size: 3rem;
+  border-radius: 2rem;
+  color: var(--color4);
+  margin: 0.5rem;
+}
+
+.modal button:first-of-type {
+  border: none;
+}
+
+.modal button:nth-of-type(2) {
+  border: 0.2rem solid var(--color5);
+  background: none;
+  color: var(--color5);
+}
+
+.modal button {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 800px) {
+  header {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .complaint {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .complaint .thumb-photo {
+    width: 100%;
+    height: 20rem;
+  }
+  .complaint p:first-of-type {
+    overflow: visible;
+    white-space: normal;
+  }
+
+  /* Filter Menu */
+
+  .filter-menu > div {
+    display: grid;
+    grid-template-areas: "filter order" "button button";
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .filter-menu .button {
+    grid-area: button;
+    max-width: 20rem;
+  }
+
+  /* Footer */
+
+  footer a {
+    margin: 2rem;
+    max-width: 20rem;
+  }
+}

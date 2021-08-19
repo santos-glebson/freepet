@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include('./partials/head'); %>
+
+  <body>
+    <section class="bg-image"></section>
+    <main>
+      <a href="/"><img src="/images/free-pet.svg" alt="Free Pet"></a>
+      <form action="/signup" method="POST">
+        <fieldset>
+          <h2>
+            <%=bodyTitle %>
+          </h2>
+        </fieldset>
+        <fieldset>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </fieldset>
+        <fieldset>
+          <label for="password">Senha</label>
+          <input type="password" minlength="4" maxlength="8" id="password" name="password">
+        </fieldset>
+        <button type="submit" class="button">Cadastrar</button>
+        <a href="/" class="button">Voltar</a>
+      </form>
+    </main>
+  </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include('./partials/head'); %>
+
+  <body>
+    <form action="/room/updateUser/<%=user._id%>" method="POST" enctype="multipart/form-data">
+      <label for="userPhoto" id="boxPhoto" <% if (user.image !='user.jpg' ) { %>
+        style="background-image: url('/images/user-photos/<%=user.image%>');"
+          <% } else {%>
+            style="background-image: url('/images/user.svg');"
+            <%}%> ></label>
+      <input type="file" accept="image/jpeg" id="userPhoto" name="complaint-photo" onchange="fileReader(event)">
+      <!-- <i class="fas fa-trash" onclick="deleteImage()"></i> -->
+      <fieldset>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" value="<%=user.name%>">
+        <button type="submit" id="saveButton">Salvar</button>
+      </fieldset>
+    </form>
+    <footer>
+      <a href="/room/<%=user._id%>"><i class="fas fa-arrow-left"></i> Voltar</a>
+    </footer>
+    <script src="/scripts/scripts.js"></script>
+  </body>
+
+</html>

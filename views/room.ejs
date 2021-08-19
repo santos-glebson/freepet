@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include('./partials/head'); %>
+
+  <body>
+    <header>
+      <div class="user" onclick="location.href='/room/profile/<%=user._id%>'">
+        <div class="user-image" <% if (user.image !='user.jpg' ) { %>
+          style="background-image: url('/images/user-photos/<%=user.image%>')"
+            <% } %> ></div>
+        <p>
+          <%=user.name%>
+        </p>
+      </div>
+      <a href="/"><i class="fas fa-power-off"></i></a>
+    </header>
+
+    <!-- Filter menu -->
+    <div class="filter-button"><i class="fas fa-filter" onclick="showMenu(this)"></i></div>
+    <section class="filter-menu">
+      <div>
+        <fieldset>
+          <h3>Filtar por:</h3>
+          <label for="pending">Pendentes</label>
+          <input type="checkbox" id="pending" name="pending" <% if (status==0) { %>
+          checked
+          <% } %>>
+            <label for="answered">Atendidas</label>
+            <input type="checkbox" id="answered" name="answered" <% if (status==1) { %>
+            checked
+            <% } %>>
+              <label for="date-from">De:</label>
+              <input type="date" id="date-from" value="<%=start%>">
+              <label for="date-to">Até</label>
+              <input type="date" id="date-to" value="<%=end%>">
+        </fieldset>
+        <fieldset>
+          <h3 for="filter">Ordenar por:</h3>
+          <label for="date-oldest">Mais antigas</label>
+          <input type="radio" id="date-oldest" name="ordering" <% if (order==1) { %>
+          checked
+          <% } %>>
+            <label for="data-nearest">Mais recentes</label>
+            <input type="radio" id="data-nearest" name="ordering" <% if (order==-1) { %>
+            checked
+            <% } %>>
+        </fieldset>
+        <button class="button" onclick="applyFilter()">Filtrar</button>
+      </div>
+    </section>
+
+    <!-- Complaints -->
+    <section class="complaints">
+
+      <% for( let complaint of complaints) { %>
+        <div class="complaint">
+          <img src="/images/complaint-photos/<%=complaint.image%>" alt="Foto" class="thumb-photo" onclick="window.location.href='/complaint/<%=complaint.userId%>/<%=complaint._id%>'">
+          <p onclick="window.location.href='/complaint/<%=complaint.userId%>/<%=complaint._id%>'">
+            <%=complaint.address%>
+          </p>
+          <p>
+            <%=complaint.formatedDate%>
+          </p>
+          <% if (complaint.status==0) { %>
+            <p class="status status-pending">Pendente
+              <% } else { %>
+                <p class="status status-answered">Atendida
+                  <% } %>
+                </p>
+                <div onclick="openModal(this)" data-id="<%=complaint._id%>" class="deleteButton"> <i class=" fas fa-trash"></i></div>
+        </div>
+        <%}%>
+    </section>
+
+    <!-- Modal -->
+    <aside class="modal">
+      <div>
+        <i class="fas fa-exclamation-circle"></i>
+        <h2>Tem certeza que deseja excluir essa denúncia?</h2>
+        <div>
+          <button id="deleteButton">Sim</button>
+          <button onclick="hideModal()">Não</button>
+        </div>
+      </div>
+    </aside>
+
+    <footer>
+      <a href="/complaint/createComplaint/<%=user._id%>">Nova ocorrência <i class="fas fa-plus"></i></a>
+      <input type="hidden" value="<%=user._id%>" id="userId">
+    </footer>
+
+    <script src="/scripts/scripts.js"></script>
+  </body>
+
+</html>

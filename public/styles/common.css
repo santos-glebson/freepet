@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Georama", sans-serif;
+  outline: 0;
+}
+
+:root {
+  --color1: #d9a404;
+  --color2: #593202;
+  --color3: #ffffff;
+  --color4: #ececec;
+  --color5: #e55039;
+  --color6: rgb(185, 185, 185);
+  --color7: rgb(138, 160, 138);
+  --color8: #edd99f;
+}
+
+fieldset {
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  outline: 0;
+}
+
+a:focus {
+  outline: 0;
+}
+
+main input,
+main .button {
+  border: 2px solid var(--color2);
+  outline: 0;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
